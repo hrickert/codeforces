@@ -1,5 +1,6 @@
 package grupo_go_ra_ri.dam.isi.frsf.codeforces;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         daoCodeForces = new CodeForcesDaoHTTP();
+
+        Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
+        startActivity(intencion);
 
         Button btnFindUser = (Button) findViewById(R.id.find_user);
         btnFindUser.setOnClickListener(new View.OnClickListener() {
