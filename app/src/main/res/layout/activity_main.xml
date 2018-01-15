@@ -16,9 +16,17 @@
         android:text="Name" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/find_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Button" />
+        android:text="Mandale click" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="vacio" />
 </LinearLayout>
