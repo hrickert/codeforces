@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         daoCodeForces = new CodeForcesDaoHTTP();
 
+        MenuSlideActivity.opcion=1;
+
         Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
         startActivity(intencion);
 
