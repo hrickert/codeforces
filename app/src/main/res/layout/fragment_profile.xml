@@ -38,7 +38,7 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,7 +63,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tv_rango"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rango"
@@ -83,7 +83,7 @@
                         android:textSize="14sp" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/tv_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -93,7 +93,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView17"
+                    android:id="@+id/tv_rating_max"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="(max. 9998)"
@@ -105,33 +105,33 @@
                     android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/tv_friends"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Amigos: 99.999" />
 
                 <TextView
-                    android:id="@+id/textView16"
+                    android:id="@+id/tv_last_conection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ultima visita: 99 min ago" />
 
                 <TextView
-                    android:id="@+id/textView18"
+                    android:id="@+id/tv_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Registrado: 99 years ago " />
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tv_addres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Pais, region, ciudad."
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/tv_univ"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -145,7 +145,7 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/imagenLogo"
+                android:id="@+id/img_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -176,7 +176,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_graphic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
         startActivity(intencion);
-
-        Button btnFindUser = (Button) findViewById(R.id.find_user);
+/*
+        Button btnFindUser = (Button) findViewById(R.id.search_user);
         btnFindUser.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             prueba.setText(user.getHandle());
         }
         });
+*/
 
     }
 }

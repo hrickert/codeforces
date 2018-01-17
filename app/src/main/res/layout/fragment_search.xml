@@ -41,7 +41,7 @@
                 android:textAlignment="viewEnd" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/et_handle_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,7 +73,7 @@
                 android:textAlignment="viewEnd" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spn_country"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -102,7 +102,7 @@
                 android:textAlignment="viewEnd" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/spn_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -118,7 +118,7 @@
             android:layout_height="20dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bt_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

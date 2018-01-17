@@ -31,7 +31,7 @@
         android:layout_height="20dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_handle"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
@@ -43,7 +43,7 @@
         android:layout_height="20dp" />
 
     <Button
-        android:id="@+id/find_user"
+        android:id="@+id/bt_find_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
