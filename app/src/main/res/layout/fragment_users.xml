@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="grupo_go_ra_ri.dam.isi.frsf.codeforces.users">
+    tools:context="grupo_go_ra_ri.dam.isi.frsf.codeforces.users_list">
 
 
     <LinearLayout
@@ -31,7 +31,7 @@
             android:layout_weight="20" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_compare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

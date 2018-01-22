@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="grupo_go_ra_ri.dam.isi.frsf.codeforces.competencias">
+    tools:context="grupo_go_ra_ri.dam.isi.frsf.codeforces.contest_list">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,14 +19,15 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
         <ListView
-            android:id="@+id/lv_competencias"
+            android:id="@+id/lv_contest"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="20" />
     </LinearLayout>
 
 </FrameLayout>

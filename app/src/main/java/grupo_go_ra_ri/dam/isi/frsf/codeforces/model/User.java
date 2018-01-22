@@ -1,8 +1,5 @@
 package grupo_go_ra_ri.dam.isi.frsf.codeforces.model;
 
-/**
- * Created by hrickert on 14/01/2018.
- */
 
 public class User {
     private String handle; 	                // Codeforces user handle.
