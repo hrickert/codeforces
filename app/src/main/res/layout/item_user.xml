@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_handle_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Handle"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_name_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre y Apellido" />
+
+            <TextView
+                android:id="@+id/tv_rating_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rating" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_profile_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxHeight="50dp"
+            android:maxWidth="50dp"
+            android:minHeight="50dp"
+            android:minWidth="50dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+<!--
+        <CheckBox
+            android:id="@+id/cb_row"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />-->
+    </LinearLayout>
+</LinearLayout>

@@ -41,9 +41,9 @@ public class MenuSlideActivity extends AppCompatActivity
         switch (opcion){
             case 1: fm.beginTransaction().replace(R.id.escenario, new inicio()).commit(); break;
             case 2: fm.beginTransaction().replace(R.id.escenario, new profile()).commit(); break;
-            case 3: fm.beginTransaction().replace(R.id.escenario, new competencias()).commit(); break;
+            case 3: fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit(); break;
             case 4: fm.beginTransaction().replace(R.id.escenario, new search()).commit(); break;
-            case 5: fm.beginTransaction().replace(R.id.escenario, new users()).commit(); break;
+            case 5: fm.beginTransaction().replace(R.id.escenario, new users_list()).commit(); break;
             default: fm.beginTransaction().replace(R.id.escenario, new inicio()).commit(); break;
         }
     }
@@ -72,9 +72,9 @@ public class MenuSlideActivity extends AppCompatActivity
         } else if (id == R.id.profile) {
             fm.beginTransaction().replace(R.id.escenario, new profile()).commit();
         } else if (id == R.id.competencias) {
-            fm.beginTransaction().replace(R.id.escenario, new competencias()).commit();
+            fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit();
         } else if (id == R.id.usuarios) {
-            fm.beginTransaction().replace(R.id.escenario, new users()).commit();
+            fm.beginTransaction().replace(R.id.escenario, new users_list()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
