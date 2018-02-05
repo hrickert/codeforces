@@ -15,7 +15,6 @@ import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDaoHTTP;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
 public class MainActivity extends AppCompatActivity {
-    private CodeForcesDao daoCodeForces;
     private ListView listViewUser;
     private List<User> listUser;
     // private userAdapter adapter;
@@ -24,23 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        daoCodeForces = new CodeForcesDaoHTTP();
 
         MenuSlideActivity.opcion=1;
 
         Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
         startActivity(intencion);
-/*
-        Button btnFindUser = (Button) findViewById(R.id.search_user);
-        btnFindUser.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            User user = daoCodeForces.getUserByHandle("DmitryH");
-            TextView prueba = (TextView) findViewById(R.id.editText2);
-            prueba.setText(user.getHandle());
-        }
-        });
-*/
-
     }
 }

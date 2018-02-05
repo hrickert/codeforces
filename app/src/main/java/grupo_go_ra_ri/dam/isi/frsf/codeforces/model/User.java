@@ -24,32 +24,8 @@ public class User {
 
     public User() {}
 
-    public User(String handle) {
-        this.handle = handle;
-        this.email = null;
-        this.vkId = null;
-        this.openId = null;
-        this.firstName = null;
-        this.lastName = null;
-        this.country = null;
-        this.city = null;
-        this.organization = null;
-        this.contribution = null;
-        this.rank = null;
-        this.rating = null;
-        this.maxRank = null;
-        this.maxRating = null;
-        this.lastOnlineTimeSeconds = null;
-        this.registrationTimeSeconds = null;
-        this.friendOfCount = null;
-        this.avatar = null;
-        this.titlePhoto = null;
-    }
-
     public User(String handle, String email, String vkId, String openId, String firstName,
-        String lastName, String country, String city, String organization, Integer contribution,
-        String rank, Integer rating, String maxRank, Integer maxRating, Integer lastOnlineTimeSeconds,
-        Integer registrationTimeSeconds, Integer friendOfCount, String avatar, String titlePhoto) {
+                String lastName, String country, String city, String organization, Integer rating, String rank, String maxRank) {
             this.handle = handle;
             this.email = email;
             this.vkId = vkId;
@@ -59,16 +35,9 @@ public class User {
             this.country = country;
             this.city = city;
             this.organization = organization;
-            this.contribution = contribution;
             this.rank = rank;
-            this.rating = rating;
             this.maxRank = maxRank;
-            this.maxRating = maxRating;
-            this.lastOnlineTimeSeconds = lastOnlineTimeSeconds;
-            this.registrationTimeSeconds = registrationTimeSeconds;
-            this.friendOfCount = friendOfCount;
-            this.avatar = avatar;
-            this.titlePhoto = titlePhoto;
+            this.rating = rating;
     }
 
     public String getHandle() {

@@ -59,7 +59,7 @@ public class adaptador_competencia extends BaseAdapter{
         TextView name = (TextView)v.findViewById(R.id.tvc_name);
         name.setText(item.getName());
         ImageView calendar = (ImageView)v.findViewById(R.id.img_fecha);
-        ImageView alarm = (ImageButton)
+        //ImageView alarm = (ImageButton)
 
         return v;
     }

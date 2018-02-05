@@ -1,6 +1,8 @@
 package grupo_go_ra_ri.dam.isi.frsf.codeforces.dao;
+import android.net.Uri;
 import android.util.Log;
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,6 +11,10 @@ import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+
+import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
 /**
  * Created by hrickert on 14/01/2018.
@@ -16,138 +22,45 @@ import java.net.URLEncoder;
 
 public class MyGenericHTTPClient {
 
-    private String serverAddress;
-
-    public MyGenericHTTPClient(String address){
-        this.serverAddress=address;
-    }
-
-    public String post(String recurso,String jsonDataObject) {
-        StringBuilder sb = new StringBuilder();
-
-        HttpURLConnection urlConnection = null;
-        DataOutputStream printout =null;
-        try {
-            URL url = new URL(this.serverAddress+"/"+recurso);
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setDoOutput(true);
-            urlConnection.setChunkedStreamingMode(0);
-            urlConnection.setRequestProperty("Content-Type","application/json");
-            urlConnection.setDoOutput(true);
-            urlConnection.setRequestMethod("POST");
-            urlConnection.setUseCaches(false);
-            printout = new DataOutputStream(urlConnection.getOutputStream());
-            Log.d("TEST-ARR",jsonDataObject.toString());
-            Log.d("TEST-ARR", URLEncoder.encode(jsonDataObject.toString(),"UTF-8"));
-            String str = jsonDataObject.toString();
-            byte[] jsonData=str.getBytes("UTF-8");
-            printout.write(jsonData);
-//          printout.writeBytes(URLEncoder.encode(pedidoJSON.toString(),"UTF-8"));
-            printout.flush();
-
-            // leer las respuestas
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            InputStreamReader isw = new InputStreamReader(in);
-            int data = isw.read();
-            while (data != -1) {
-                char current = (char) data;
-                sb.append(current);
-                data = isw.read();
+    public static String buildURL(String url, Map<String, String> params) {
+        Uri.Builder builder = Uri.parse(url).buildUpon();
+        if (params != null) {
+            for (Map.Entry<String, String> entry : params.entrySet()) {
+                builder.appendQueryParameter(entry.getKey(), entry.getValue());
             }
-            Log.d("TEST-ARR",sb.toString());
-
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(printout!=null) try {
-                printout.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if(urlConnection !=null)urlConnection.disconnect();
         }
-        return sb.toString();
+        return builder.build().toString();
     }
 
-
-    public String getAll(String recurso) {
-        HttpURLConnection urlConnection = null;
-        DataOutputStream printout =null;
-        StringBuilder sb = new StringBuilder();
-
+    public static String performGetCall(String requestURL, HashMap<String, String> getDataParams) {
+        URL url;
+        StringBuilder response = new StringBuilder();
         try {
-            URL url = new URL(this.serverAddress+"/"+recurso);
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setChunkedStreamingMode(0);
+            url = new URL(buildURL(requestURL,getDataParams));
+
+            HttpURLConnection urlConnection  = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
-            urlConnection.setUseCaches(false);
+            urlConnection.setRequestProperty("Content-type", "application/json");
 
+            int responseCode = urlConnection.getResponseCode();
 
-            // leer las respuestas
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            InputStreamReader isw = new InputStreamReader(in);
-            int data = isw.read();
-            while (data != -1) {
-                char current = (char) data;
-                sb.append(current);
-                data = isw.read();
+            if(responseCode == HttpURLConnection.HTTP_OK){
+
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
+                }
+
             }
+            urlConnection.disconnect();
 
-        } catch (ProtocolException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(printout!=null) try {
-                printout.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if(urlConnection !=null)urlConnection.disconnect();
         }
-        return sb.toString();
+
+        return response.toString();
     }
-
-
-    public String getByHandle(String handle) {
-        HttpURLConnection urlConnection = null;
-        DataOutputStream printout =null;
-        StringBuilder sb = new StringBuilder();
-
-        try {
-            URL url = new URL(this.serverAddress+"/user.info?handles="+handle);
-            urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setChunkedStreamingMode(0);
-            urlConnection.setRequestProperty("Content-Type","application/json");
-            urlConnection.setRequestMethod("GET");
-            urlConnection.setUseCaches(false);
-
-            // leer las respuestas
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream()); // EL ERROR ESTÁ ACÁ, REVISAR
-            InputStreamReader isw = new InputStreamReader(in);
-            int data = isw.read();
-            while (data != -1) {
-                char current = (char) data;
-                sb.append(current);
-                data = isw.read();
-            }
-
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if(printout!=null) try {
-                printout.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if(urlConnection !=null)urlConnection.disconnect();
-        }
-        return sb.toString();
-    }
-
-
 }
