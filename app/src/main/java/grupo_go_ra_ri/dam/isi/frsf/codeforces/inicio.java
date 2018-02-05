@@ -27,7 +27,7 @@ public class inicio extends Fragment {
         btnFindUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String user = daoCodeForces.getUserByHandle("DmitriyH");
+                User user = daoCodeForces.getUserByHandle("DmitriyH");
                 if(true) { // preguntar si existe el usuario
                     MenuSlideActivity.opcion=2;
                     Intent intencion = new Intent(getActivity().getApplicationContext(),MenuSlideActivity.class);

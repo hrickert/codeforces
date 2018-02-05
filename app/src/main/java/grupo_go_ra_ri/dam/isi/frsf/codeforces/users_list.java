@@ -5,20 +5,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 import java.util.ArrayList;
 
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.adaptadores.adaptador_usuario;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
+
 public class users_list extends Fragment {
 
     private ListView lvUsuarios;
-    private Button btnComparar;
-    private User usuario = new User();
     private ArrayList<User> lista_usuarios;
     private adaptador_usuario listAdapter;
 
@@ -28,21 +24,13 @@ public class users_list extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_users, container, false);
 
-        btnComparar = (Button)view.findViewById(R.id.btn_compare);
         lvUsuarios = (ListView)view.findViewById(R.id.lv_users);
 
+        //Se carga la lista con las competencias
         lista_usuarios = GetArrayItems();
 
         listAdapter = new adaptador_usuario(getActivity(),lista_usuarios);
         lvUsuarios.setAdapter(listAdapter);
-
-        lvUsuarios.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity().getApplicationContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-
-            }
-        });
 
         return view;
     }
@@ -59,9 +47,13 @@ public class users_list extends Fragment {
         User usuario4 = new User();
 
         usuario1.setHandle("Usuario1");
+        usuario1.setRating(1234);
         usuario2.setHandle("Usuario2");
+        usuario2.setRating(1000);
         usuario3.setHandle("Usuario3");
+        usuario3.setRating(100);
         usuario4.setHandle("Usuario4");
+        usuario4.setRating(90);
 
         lista_usuarios.add(usuario1);
         lista_usuarios.add(usuario2);

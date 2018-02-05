@@ -35,7 +35,7 @@
         android:layout_width="200sp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="DmitriyH"
         android:textAlignment="center" />
 
     <Space
