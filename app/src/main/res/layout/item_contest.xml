@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,6 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -36,45 +39,11 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tvc_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Tipo"
-                    android:textSize="12sp" />
-
-                <TextView
                     android:id="@+id/tvc_difficult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Dificultad"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tvc_phase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Fase"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="3dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvc_duration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Duracion"
                     android:textSize="12sp" />
 
                 <TextView
@@ -87,7 +56,39 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvc_preparedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Organizado por:"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/img_info"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorYellow"
+            android:maxHeight="25dp"
+            android:maxWidth="25dp"
+            android:minHeight="25dp"
+            android:minWidth="25dp"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -100,6 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorBlue"
                 android:maxHeight="25dp"
                 android:maxWidth="25dp"
                 android:minHeight="25dp"
@@ -111,6 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/colorBlue"
                 android:maxHeight="25dp"
                 android:maxWidth="25dp"
                 android:minHeight="25dp"
@@ -123,10 +126,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorRed"
             android:maxHeight="25dp"
             android:maxWidth="25dp"
             android:minHeight="25dp"
             android:minWidth="25dp"
-            app:srcCompat="?android:attr/actionModeShareDrawable" />
+            app:srcCompat="@android:drawable/ic_menu_share" />
+
     </LinearLayout>
 </LinearLayout>
