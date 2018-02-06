@@ -4,6 +4,8 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
 /**
