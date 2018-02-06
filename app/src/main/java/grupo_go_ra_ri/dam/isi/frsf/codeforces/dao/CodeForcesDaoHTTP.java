@@ -72,7 +72,9 @@ public class CodeForcesDaoHTTP implements CodeForcesDao {
         cliente = new MyGenericHTTPClient();
         final String urlString = "http://codeforces.com/api/contest.list?gym=false";
         String stringOfContests = cliente.performGetCall(urlString, null);
-        JSONArray arrayOfContests = new JSONObject(stringOfContests).getJSONArray();
+        System.out.println(stringOfContests);
+        return new ArrayList<>();
+        //JSONArray arrayOfContests = new JSONObject(stringOfContests).getJSONArray();
     }
 }
 
