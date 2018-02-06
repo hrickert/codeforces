@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.Contest;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
 /**
@@ -66,5 +67,14 @@ public class CodeForcesDaoHTTP implements CodeForcesDao {
 
     @Override
     public void delete(User u) {}
+
+    public ArrayList<Contest> getContests() {
+        cliente = new MyGenericHTTPClient();
+        final String urlString = "http://codeforces.com/api/contest.list?gym=false";
+        String stringOfContests = cliente.performGetCall(urlString, null);
+        System.out.println(stringOfContests);
+        return new ArrayList<>();
+        //JSONArray arrayOfContests = new JSONObject(stringOfContests).getJSONArray();
+    }
 }
 

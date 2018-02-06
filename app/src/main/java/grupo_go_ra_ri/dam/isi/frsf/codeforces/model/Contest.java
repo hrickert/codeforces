@@ -4,7 +4,7 @@ package grupo_go_ra_ri.dam.isi.frsf.codeforces.model;
 public class Contest {
     private Integer id;
     private String name;
-    private enum  type { CF, IOI, ICPC}     //Scoring system used for the contest.
+    private String  type;    //Scoring system used for the contest.
     private enum phase {BEFORE, CODING, PENDING_SYSTEM_TEST, SYSTEM_TEST, FINISHED}
     private boolean frozen;                 //If true, then the ranklist for the contest is frozen and shows only submissions, created before freeze.
     private Integer durationSeconds;        //Duration of the contest in seconds.
@@ -27,24 +27,14 @@ public class Contest {
     public Contest(){}
 
     public Contest(Integer id, String name, boolean frozen, Integer durationSeconds,
-                   Integer startTimeSeconds, Integer relativeTimeSeconds, String preparedBy,
-                   String websiteUrl, String description, Integer difficulty, String kind,
-                   String icpcRegion, String country, String city, String season) {
+                   Integer startTimeSeconds, Integer relativeTimeSeconds, String type) {
         this.id = id;
         this.name = name;
         this.frozen = frozen;
         this.durationSeconds = durationSeconds;
         this.startTimeSeconds = startTimeSeconds;
         this.relativeTimeSeconds = relativeTimeSeconds;
-        this.preparedBy = preparedBy;
-        this.websiteUrl = websiteUrl;
-        this.description = description;
-        this.difficulty = difficulty;
-        this.kind = kind;
-        this.icpcRegion = icpcRegion;
-        this.country = country;
-        this.city = city;
-        this.season = season;
+        this.type = type;
     }
 
     public Integer getId() {return id;}
