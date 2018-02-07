@@ -16,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MenuSlideActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener , MenuListener{
 
     public static int opcion;
 
@@ -80,5 +80,15 @@ public class MenuSlideActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onShowUserData(String user) {
+        FragmentManager fm = getSupportFragmentManager();
+        profile pfrg = new profile();
+        Bundle bundle = new Bundle();
+        bundle.putString("aaaa",user);
+        pfrg.setArguments(bundle);
+        fm.beginTransaction().replace(R.id.escenario,pfrg).commit();
     }
 }
