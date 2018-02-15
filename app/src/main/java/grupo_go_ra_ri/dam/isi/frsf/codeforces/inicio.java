@@ -67,7 +67,7 @@ public class inicio extends Fragment {
                    //     new User(handle, email, vkId, openId, firstName, lastName, country, city,
                 //                organization, Integer.parseInt(rating), rank, maxRank);
                         // Voy a la activity perfil, hay que pasarle el usuario creado
-                        MenuSlideActivity.opcion=2;
+                        //MenuSlideActivity.opcion=2;
 
                         Runnable r1 = new Runnable() {
                             @Override
