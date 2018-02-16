@@ -4,8 +4,8 @@ package grupo_go_ra_ri.dam.isi.frsf.codeforces.model;
 public class Contest {
     private Integer id;
     private String name;
-    private String  type;    //Scoring system used for the contest.
-    private enum phase {BEFORE, CODING, PENDING_SYSTEM_TEST, SYSTEM_TEST, FINISHED}
+    private String type;                    //Scoring system used for the contest.
+    private String phase;
     private boolean frozen;                 //If true, then the ranklist for the contest is frozen and shows only submissions, created before freeze.
     private Integer durationSeconds;        //Duration of the contest in seconds.
     private Integer startTimeSeconds;       //Can be absent. Contest start time in unix format.
@@ -26,20 +26,21 @@ public class Contest {
 
     public Contest(){}
 
-    public Contest(Integer id, String name, boolean frozen, Integer durationSeconds,
-                   Integer startTimeSeconds, Integer relativeTimeSeconds, String type) {
+    public Contest(Integer id, String name, int difficulty, String preparedBy, Integer startTimeSeconds) {
         this.id = id;
         this.name = name;
-        this.frozen = frozen;
-        this.durationSeconds = durationSeconds;
+        this.difficulty = difficulty;
+        this.preparedBy = preparedBy;
         this.startTimeSeconds = startTimeSeconds;
-        this.relativeTimeSeconds = relativeTimeSeconds;
-        this.type = type;
     }
 
     public Integer getId() {return id;}
 
     public String getName() {return name;}
+
+    public String getType() {return type;}
+
+    public String getPhase() {return phase;}
 
     public boolean isFrozen() {return frozen;}
 
@@ -70,6 +71,10 @@ public class Contest {
     public void setId(Integer id) {this.id = id;}
 
     public void setName(String name) {this.name = name;}
+
+    public void setType(String type) {this.type = type;}
+
+    public void setPhase(String phase) {this.phase = phase;}
 
     public void setFrozen(boolean frozen) {this.frozen = frozen;}
 

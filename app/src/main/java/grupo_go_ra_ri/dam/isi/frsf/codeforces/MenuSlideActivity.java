@@ -18,7 +18,6 @@ import android.view.MenuItem;
 public class MenuSlideActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , MenuListener{
 
-    public static int opcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +37,7 @@ public class MenuSlideActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fm = getSupportFragmentManager();
-        switch (opcion){
-            case 1: fm.beginTransaction().replace(R.id.escenario, new inicio()).commit(); break;
-            case 2: fm.beginTransaction().replace(R.id.escenario, new profile()).commit(); break;
-            case 3: fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit(); break;
-            case 4: fm.beginTransaction().replace(R.id.escenario, new search()).commit(); break;
-            case 5: fm.beginTransaction().replace(R.id.escenario, new users_list()).commit(); break;
-            default: fm.beginTransaction().replace(R.id.escenario, new inicio()).commit(); break;
-        }
+        fm.beginTransaction().replace(R.id.escenario, new inicio()).commit();
     }
 
     @Override
@@ -72,7 +64,7 @@ public class MenuSlideActivity extends AppCompatActivity
         } else if (id == R.id.profile) {
             fm.beginTransaction().replace(R.id.escenario, new profile()).commit();
         } else if (id == R.id.competencias) {
-            fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit();
+            fm.beginTransaction().replace(R.id.escenario, new ContestList()).commit();
         } else if (id == R.id.usuarios) {
             fm.beginTransaction().replace(R.id.escenario, new users_list()).commit();
         }

@@ -38,7 +38,6 @@ public class search extends Fragment {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                String user = handle.getText().toString();
                 cliente = new MyGenericHTTPClient();
                 ArrayList<User> users = new ArrayList<User>();
                 Thread thread = new Thread(new Runnable(){
@@ -52,7 +51,7 @@ public class search extends Fragment {
                             JSONObject obj = new JSONObject(userData);
                             String status = (String) obj.getString("status");
                             if (status.equals("OK")) {
-                                MenuSlideActivity.opcion = 5;
+                                //MenuSlideActivity.opcion = 5;
                                 Intent intencion = new Intent(getActivity().getApplicationContext(), MenuSlideActivity.class);
                                 startActivity(intencion);
                             } else {
