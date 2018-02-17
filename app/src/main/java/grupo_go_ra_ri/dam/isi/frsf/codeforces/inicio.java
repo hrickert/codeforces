@@ -42,14 +42,14 @@ public class inicio extends Fragment {
                 @Override
                 public void run() {
                     try { // LAS PROPIEDADES QUE VIENEN SON DISTINTAS. CAMBIARLO. FIJARE EN http://codeforces.com/api/user.info?handles=DmitriyH
-                        String userData = cliente.performGetCall(urlString, null);
+                        final String userData = cliente.performGetCall(urlString, null);
                         JSONObject obj = new JSONObject(userData);
-                        String status = (String) obj.getString("status");
-                        JSONArray result = (JSONArray) obj.getJSONArray("result");
-                        String handle = (String) result.getJSONObject(0).getString("handle");
+                        String status = obj.getString("status");
+//                        JSONArray result = (JSONArray) obj.getJSONArray("result");
+//                        String handle = (String) result.getJSONObject(0).getString("handle");
                         //String email = "DmitriyH@gmail.com";// (String) result.getJSONObject(0).getString("email");
                         //String vkId = ""; // (String) result.getJSONObject(0).getString("vkId");
-                        final String firstName = (String) result.getJSONObject(0).getString("firstName");
+//                        final String firstName = (String) result.getJSONObject(0).getString("firstName");
                         //String lastName = (String) result.getJSONObject(0).getString("lastName");
                         //String country = (String) result.getJSONObject(0).getString("country");
                         //String city = (String) result.getJSONObject(0).getString("city");
@@ -66,17 +66,23 @@ public class inicio extends Fragment {
                         //String titlePhoto = (String) result.getJSONObject(0).getString("titlePhoto");
                    //     new User(handle, email, vkId, openId, firstName, lastName, country, city,
                 //                organization, Integer.parseInt(rating), rank, maxRank);
-                        // Voy a la activity perfil, hay que pasarle el usuario creado
-                        MenuSlideActivity.opcion=2;
+                        if(status.equals("OK")) {
+                            // Voy a la activity perfil, hay que pasarle el usuario creado
 
-                        Runnable r1 = new Runnable() {
-                            @Override
-                            public void run() {
-                                MenuListener m = (MenuSlideActivity) getActivity();
-                                m.onShowUserData(firstName);
-                            }
-                        };
-                        myHandler.post(r1);
+                            MenuSlideActivity.opcion = 2;
+
+                            Runnable r1 = new Runnable() {
+                                @Override
+                                public void run() {
+                                    MenuListener m = (MenuSlideActivity) getActivity();
+                                    m.onShowUserData(userData);
+                                }
+                            };
+                            myHandler.post(r1);
+                        }else{
+                            Toast error = Toast.makeText(getActivity(),obj.getString("comment"), Toast.LENGTH_LONG);
+                            error.show();
+                        }
 
                     } catch (Exception e) {
                         Log.e("error", e.getMessage());

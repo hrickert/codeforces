@@ -40,7 +40,7 @@ public class MenuSlideActivity extends AppCompatActivity
         FragmentManager fm = getSupportFragmentManager();
         switch (opcion){
             case 1: fm.beginTransaction().replace(R.id.escenario, new inicio()).commit(); break;
-            case 2: fm.beginTransaction().replace(R.id.escenario, new profile()).commit(); break;
+            case 2: fm.beginTransaction().replace(R.id.escenario, new Profile()).commit(); break;
             case 3: fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit(); break;
             case 4: fm.beginTransaction().replace(R.id.escenario, new search()).commit(); break;
             case 5: fm.beginTransaction().replace(R.id.escenario, new users_list()).commit(); break;
@@ -70,7 +70,7 @@ public class MenuSlideActivity extends AppCompatActivity
         } else if (id == R.id.search_user) {
             fm.beginTransaction().replace(R.id.escenario, new search()).commit();
         } else if (id == R.id.profile) {
-            fm.beginTransaction().replace(R.id.escenario, new profile()).commit();
+            fm.beginTransaction().replace(R.id.escenario, new Profile()).commit();
         } else if (id == R.id.competencias) {
             fm.beginTransaction().replace(R.id.escenario, new contest_list()).commit();
         } else if (id == R.id.usuarios) {
@@ -83,11 +83,11 @@ public class MenuSlideActivity extends AppCompatActivity
     }
 
     @Override
-    public void onShowUserData(String user) {
+    public void onShowUserData(String json) {
         FragmentManager fm = getSupportFragmentManager();
-        profile pfrg = new profile();
+        Profile pfrg = new Profile();
         Bundle bundle = new Bundle();
-        bundle.putString("aaaa",user);
+        bundle.putString("json",json);
         pfrg.setArguments(bundle);
         fm.beginTransaction().replace(R.id.escenario,pfrg).commit();
     }
