@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MenuSlideActivity.opcion=1;
+        //MenuSlideActivity.opcion=1;
 
         Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
         startActivity(intencion);
