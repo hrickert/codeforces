@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.Contest;
+
 public class MenuSlideActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , MenuListener{
 
