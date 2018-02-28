@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.ListView;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDao;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDaoHTTP;
+import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.Contest;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //MenuSlideActivity.opcion=1;
 
         Intent intencion = new Intent(getApplicationContext(),MenuSlideActivity.class);
         startActivity(intencion);

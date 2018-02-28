@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.adaptadores.adaptador_competencia;
-import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDaoHTTP;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.MyGenericHTTPClient;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.model.Contest;
 
@@ -75,7 +74,7 @@ public class ContestList extends Fragment {
                     myHandler.post(r1);
                 }
                 catch(Exception e) {
-                    Log.e("error", e.getMessage());
+                    Log.e("Error cargando comp", e.getMessage());
                 }
             }
         });
@@ -83,6 +82,7 @@ public class ContestList extends Fragment {
 
         return view;
     }
+
 
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
