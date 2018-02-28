@@ -16,6 +16,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.PrintStream;
+
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDao;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDaoHTTP;
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.MyGenericHTTPClient;
@@ -47,34 +49,13 @@ public class inicio extends Fragment {
                     try { // LAS PROPIEDADES QUE VIENEN SON DISTINTAS. CAMBIARLO. FIJARE EN http://codeforces.com/api/user.info?handles=DmitriyH
                         final String userData = cliente.performGetCall(urlString, null);
                         final JSONObject obj = new JSONObject(userData);
+                        String ratingUrlString = "http://codeforces.com/api/user.rating?handle="+username.getText().toString();
+                        final String ratingChangesString = cliente.performGetCall(ratingUrlString, null);
                         String status = obj.getString("status");
-//                        JSONArray result = (JSONArray) obj.getJSONArray("result");
-//                        String handle = (String) result.getJSONObject(0).getString("handle");
-                        //String email = "DmitriyH@gmail.com";// (String) result.getJSONObject(0).getString("email");
-                        //String vkId = ""; // (String) result.getJSONObject(0).getString("vkId");
-//                        final String firstName = (String) result.getJSONObject(0).getString("firstName");
-                        //String lastName = (String) result.getJSONObject(0).getString("lastName");
-                        //String country = (String) result.getJSONObject(0).getString("country");
-                        //String city = (String) result.getJSONObject(0).getString("city");
-                        //String organization = (String) result.getJSONObject(0).getString("organization");
-                        //String contribution = (String) result.getJSONObject(0).getString("contribution");
-                        //String rank = (String) result.getJSONObject(0).getString("rank");
-                        //String rating = (String) result.getJSONObject(0).getString("rating");
-                        //String maxRank = (String) result.getJSONObject(0).getString("maxRank");
-                        //String maxRating = (String) result.getJSONObject(0).getString("maxRating");
-                        //String lastOnlineTimeSeconds = (String) result.getJSONObject(0).getString("registrationTimeSeconds");
-                        //String registrationTimeSeconds = (String) result.getJSONObject(0).getString("registrationTimeSeconds");
-                        //String friendOfCount = (String) result.getJSONObject(0).getString("friendOfCount");
-                        //String avatar = (String) result.getJSONObject(0).getString("avatar");
-                        //String titlePhoto = (String) result.getJSONObject(0).getString("titlePhoto");
-                   //     new User(handle, email, vkId, openId, firstName, lastName, country, city,
-                //                organization, Integer.parseInt(rating), rank, maxRank);
                         if(status.equals("OK")) {
-                            // Voy a la activity perfil, hay que pasarle el usuario creado
-                        // Voy a la activity perfil, hay que pasarle el usuario creado
-                        //MenuSlideActivity.opcion=2;
-
-
+                            JSONObject ratings = new JSONObject(ratingChangesString);
+                            JSONArray ratingChanges = ratings.getJSONArray("result");
+//                            System.out.println(ratingChanges.toString());
                             Runnable r1 = new Runnable() {
                                 @Override
                                 public void run() {

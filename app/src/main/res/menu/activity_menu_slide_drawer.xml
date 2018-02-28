@@ -14,9 +14,9 @@
             android:id="@+id/competencias"
             android:icon="@drawable/ic_menu_send"
             android:title="Lista de Competencias" />
-        <item
-            android:id="@+id/usuarios"
-            android:icon="@drawable/ic_menu_send"
-            android:title="" />
+        <!--<item-->
+            <!--android:id="@+id/usuarios"-->
+            <!--android:icon="@drawable/ic_menu_send"-->
+            <!--android:title="Lista de Amigos" />-->
     </group>
 </menu>

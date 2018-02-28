@@ -65,9 +65,10 @@ public class MenuSlideActivity extends AppCompatActivity
             fm.beginTransaction().replace(R.id.escenario, new Profile()).commit();
         } else if (id == R.id.competencias) {
             fm.beginTransaction().replace(R.id.escenario, new ContestList()).commit();
-        } else if (id == R.id.usuarios) {
-            fm.beginTransaction().replace(R.id.escenario, new users_list()).commit();
         }
+//        else if (id == R.id.usuarios) {
+//            fm.beginTransaction().replace(R.id.escenario, new users_list()).commit();
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
