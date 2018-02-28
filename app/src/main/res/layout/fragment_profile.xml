@@ -175,20 +175,10 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
-        <ImageView
-            android:id="@+id/img_graphic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:maxHeight="150dp"
-            android:maxWidth="150dp"
-            android:minHeight="150dp"
-            android:minWidth="150dp"
-            android:scaleType="center"
-            android:src="@android:drawable/ic_menu_gallery"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="0dp" />
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <Space
             android:layout_width="wrap_content"

@@ -15,12 +15,8 @@
             android:icon="@drawable/ic_menu_send"
             android:title="Lista de Competencias" />
         <item
-            android:id="@+id/search_user"
-            android:icon="@drawable/ic_menu_send"
-            android:title="Buscar Usuario" />
-        <item
             android:id="@+id/usuarios"
             android:icon="@drawable/ic_menu_send"
-            android:title="Lista de Usuarios" />
+            android:title="" />
     </group>
 </menu>

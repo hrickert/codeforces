@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import grupo_go_ra_ri.dam.isi.frsf.codeforces.dao.CodeForcesDao;
@@ -33,17 +35,18 @@ public class inicio extends Fragment {
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
         Button btnFindUser = (Button) view.findViewById(R.id.bt_find_user);
+        final EditText username = (EditText) view.findViewById(R.id.et_handle);
         btnFindUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
             cliente = new MyGenericHTTPClient();
-            final String urlString = "http://codeforces.com/api/user.info?handles=DmitriyH";
+            final String urlString = "http://codeforces.com/api/user.info?handles="+username.getText().toString();
             Thread thread = new Thread(new Runnable(){
                 @Override
                 public void run() {
                     try { // LAS PROPIEDADES QUE VIENEN SON DISTINTAS. CAMBIARLO. FIJARE EN http://codeforces.com/api/user.info?handles=DmitriyH
                         final String userData = cliente.performGetCall(urlString, null);
-                        JSONObject obj = new JSONObject(userData);
+                        final JSONObject obj = new JSONObject(userData);
                         String status = obj.getString("status");
 //                        JSONArray result = (JSONArray) obj.getJSONArray("result");
 //                        String handle = (String) result.getJSONObject(0).getString("handle");
@@ -76,7 +79,11 @@ public class inicio extends Fragment {
                                 @Override
                                 public void run() {
                                     MenuListener m = (MenuSlideActivity) getActivity();
-                                    m.onShowUserData(userData);
+                                    try {
+                                        m.onShowUserData(obj.getJSONArray("result").get(0).toString());
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
                             };
                             myHandler.post(r1);

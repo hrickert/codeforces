@@ -61,8 +61,6 @@ public class MenuSlideActivity extends AppCompatActivity
 
         if (id == R.id.inicio) {
             fm.beginTransaction().replace(R.id.escenario, new inicio()).commit();
-        } else if (id == R.id.search_user) {
-            fm.beginTransaction().replace(R.id.escenario, new search()).commit();
         } else if (id == R.id.profile) {
             fm.beginTransaction().replace(R.id.escenario, new Profile()).commit();
         } else if (id == R.id.competencias) {
