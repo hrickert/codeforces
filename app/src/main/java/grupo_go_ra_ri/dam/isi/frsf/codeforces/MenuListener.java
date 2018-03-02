@@ -6,5 +6,5 @@ package grupo_go_ra_ri.dam.isi.frsf.codeforces;
 
 public interface MenuListener {
 
-    public void onShowUserData(String user);
+    public void onShowUserData(String user, String ratingChanges);
 }

@@ -1,9 +1,11 @@
 package grupo_go_ra_ri.dam.isi.frsf.codeforces.model;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -26,6 +28,7 @@ public class User {
     private Integer friendOfCount; 	        // Amount of users who have this user in friends.
     private String avatar; 	                // User's avatar URL.
     private String titlePhoto; 	            // User's title photo URL.
+    private ArrayList<RatingChange> ratingChanges; //Los ratings del usuario
 
     public User() {}
 
@@ -213,5 +216,21 @@ public class User {
 
     public void setTitlePhoto(String titlePhoto) {
         this.titlePhoto = titlePhoto;
+    }
+
+    public ArrayList<RatingChange> getRatingChanges() {
+        return ratingChanges;
+    }
+
+    public void setRatingChanges(ArrayList<RatingChange> ratingChanges) {
+        this.ratingChanges = ratingChanges;
+    }
+
+    public void setRatingChanges(JSONArray jsonArray) throws JSONException {
+        this.ratingChanges = new ArrayList<>();
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject row = jsonArray.getJSONObject(i);
+            this.ratingChanges.add(new RatingChange(row));
+        }
     }
 }

@@ -76,11 +76,12 @@ public class MenuSlideActivity extends AppCompatActivity
     }
 
     @Override
-    public void onShowUserData(String json) {
+    public void onShowUserData(String json, String ratingChangesString) {
         FragmentManager fm = getSupportFragmentManager();
         Profile pfrg = new Profile();
         Bundle bundle = new Bundle();
         bundle.putString("json",json);
+        bundle.putString("rating", ratingChangesString);
         pfrg.setArguments(bundle);
         fm.beginTransaction().replace(R.id.escenario,pfrg).commit();
     }

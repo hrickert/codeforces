@@ -54,14 +54,14 @@ public class inicio extends Fragment {
                         String status = obj.getString("status");
                         if(status.equals("OK")) {
                             JSONObject ratings = new JSONObject(ratingChangesString);
-                            JSONArray ratingChanges = ratings.getJSONArray("result");
+                            final JSONArray ratingChanges = ratings.getJSONArray("result");
 //                            System.out.println(ratingChanges.toString());
                             Runnable r1 = new Runnable() {
                                 @Override
                                 public void run() {
                                     MenuListener m = (MenuSlideActivity) getActivity();
                                     try {
-                                        m.onShowUserData(obj.getJSONArray("result").get(0).toString());
+                                        m.onShowUserData(obj.getJSONArray("result").get(0).toString(), ratingChanges.toString());
                                     } catch (JSONException e) {
                                         e.printStackTrace();
                                     }
