@@ -55,7 +55,6 @@ public class inicio extends Fragment {
                         if(status.equals("OK")) {
                             JSONObject ratings = new JSONObject(ratingChangesString);
                             final JSONArray ratingChanges = ratings.getJSONArray("result");
-//                            System.out.println(ratingChanges.toString());
                             Runnable r1 = new Runnable() {
                                 @Override
                                 public void run() {

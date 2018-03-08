@@ -1,5 +1,6 @@
 package grupo_go_ra_ri.dam.isi.frsf.codeforces;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -54,12 +55,17 @@ public class Profile extends Fragment {
             for (RatingChange rtChg: usr.getRatingChanges()) {
                 entries.add(new Entry(rtChg.getRatingUpdateTimeSeconds(), rtChg.getRank()));
             }
-            LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
+            LineDataSet dataSet = new LineDataSet(entries, usr.getHandle());
+            dataSet.setColor(Color.rgb(239,190,190));
+            dataSet.setCircleColor(Color.rgb(239,190,190));// add entries to dataset
 //            dataSet.setColor();
 //            dataSet.setValueTextColor(...);
             LineData lineData = new LineData(dataSet);
             chart.setData(lineData);
+            chart.setBackgroundColor(Color.rgb(190, 239, 239));
+            chart.setVisibleYRange(0, 4000, chart.getAxisRight().getAxisDependency());
             chart.invalidate();
+            chart.fitScreen();
         } catch (JSONException e) {
             e.printStackTrace();
         }

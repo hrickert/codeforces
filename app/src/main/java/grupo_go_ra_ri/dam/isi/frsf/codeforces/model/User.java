@@ -6,6 +6,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 public class User {
@@ -232,5 +234,11 @@ public class User {
             JSONObject row = jsonArray.getJSONObject(i);
             this.ratingChanges.add(new RatingChange(row));
         }
+        Collections.sort(this.ratingChanges, new Comparator<RatingChange>() {
+            @Override
+            public int compare(RatingChange t1, RatingChange t2) {
+                return t1.getRatingUpdateTimeSeconds() < t2.getRatingUpdateTimeSeconds()?-1:1;
+            }
+        });
     }
 }
