@@ -6,4 +6,4 @@ Beta App develop for subject Development on Android at [UTN-FRSF](https://www.fr
 
 - [Goettig, Andres](https://github.com/hardkill88)
 - [Ramos, Matías](https://github.com/matramos)
-- [Rickert, Hernán](https://github.com/hernanrickert)
+- [Rickert, Hernán](https://github.com/hrickert)
